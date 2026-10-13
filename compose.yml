@@ -1,7 +1,8 @@
 ---
 services:
   db:
-    image: shaikmustafa/arshad:db
+    image: dbimage
+    #image: shaikmustafa/arshad:db #if you have not build the image locally then you can use these from dockerhub & comment the above line 
     deploy:
       replicas: 1
     ports:
@@ -10,7 +11,8 @@ services:
       - mynetwork
 
   auth_service:
-    image: shaikmustafa/arshad:auth
+    #image: shaikmustafa/arshad:auth
+    image: authimage
     deploy:
       replicas: 1
     ports:
@@ -22,7 +24,8 @@ services:
     
 
   book_service:
-    image: shaikmustafa/arshad:book
+    image: bookimage
+    #image: shaikmustafa/arshad:book
     deploy:
       replicas: 1
     ports:
@@ -32,7 +35,8 @@ services:
     depends_on:
       - db
   borrow_service:
-    image: shaikmustafa/arshad:borrow
+    image: borrowimage
+    #image: shaikmustafa/arshad:borrow
     deploy:
       replicas: 1
     ports:
@@ -43,7 +47,8 @@ services:
       - db
 
   frontend:
-    image: shaikmustafa/arshad:frontend
+    image: frontendimage
+    #image: shaikmustafa/arshad:frontend
     deploy:
       replicas: 1
     ports:

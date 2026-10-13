@@ -62,4 +62,3 @@ services:
 
 networks:
   mynetwork:
-    driver: bridge
